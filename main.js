@@ -8,8 +8,15 @@ document.getElementById("code-block").innerHTML = token;
 
 copy_button.addEventListener("click", function()
 {
-    navigator.clipboard.writeText(token);
-    alert("Token has been copied to your keyboard");
+    if(token != null)
+    {
+        navigator.clipboard.writeText(token);
+        alert("Token has been copied to your keyboard");
+    }
+    else
+    {
+        alert("You don't have a token in your URL\nNothing was copied to your clipboard");
+    }
 });
 
 const token_element = document.getElementById("code-block");
